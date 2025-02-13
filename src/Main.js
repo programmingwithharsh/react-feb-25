@@ -103,10 +103,10 @@ export default class Main extends React.Component {  // class component
                     {
                         this.state.products.map((product, index) => (
                             <tr key={index}>
-                                <td key={index}>{product.productName}</td>
-                                <td key={index}>{product.description}</td>
-                                <td key={index}>{product.price}</td>
-                                <td key={index}>{product.starRating}</td>
+                                <td>{product.productName}</td>
+                                <td>{product.description}</td>
+                                <td>{product.price}</td>
+                                <td>{product.starRating}</td>
                             </tr>
                         )
                         )
