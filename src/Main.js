@@ -7,6 +7,9 @@ import AddProduct from './AddProduct';
 import Title from './Title';
 // import { Title1, Title2, Title3, Title4 } from './Title';
 import Login from './Login';
+import Register from './Register';
+import RegisterClass from './RegisterClass';
+import UserLocalStorage from './UserLocalStorage';
 
 export default class Main extends React.Component {  // class component
     constructor(props) {
@@ -81,6 +84,7 @@ export default class Main extends React.Component {  // class component
         console.log("This is render lifecycle - 2");
         console.log(this.state);
         return <div>
+            <RegisterClass />
             <div>This is Main Class Component</div>
             <h1>Username Props is {this.props.username}</h1>
             <h1>Username State is {this.state.username}</h1>
@@ -92,6 +96,7 @@ export default class Main extends React.Component {  // class component
             <AddProduct />
             <Title mobile="iphone" />
             <Login />
+            <UserLocalStorage />
         </div>
     }
 }
