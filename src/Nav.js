@@ -8,7 +8,8 @@ function Nav() {
             <Link to="/addproduct">AddProduct</Link>|
             <Link to="/products">Products</Link>|
             <Link to="/title">Title</Link>|
-            <Link to="/register">Register</Link>
+            <Link to="/app">App</Link>|
+            <Link to="/users">Users</Link>
         </nav>
         <div>
             <Outlet />

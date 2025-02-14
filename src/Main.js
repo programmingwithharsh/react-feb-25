@@ -1,13 +1,10 @@
 import React from 'react';
 import ProductList from './ProductList';
 import App from './App';
-import Product from './Product';
 import Welcome from './Welcome';
 import AddProduct from './AddProduct';
 import Title from './Title';
-// import { Title1, Title2, Title3, Title4 } from './Title';
 import Login from './Login';
-import Register from './Register';
 import RegisterClass from './RegisterClass';
 import UserLocalStorage from './UserLocalStorage';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
@@ -93,8 +90,11 @@ export default class Main extends React.Component {  // class component
                         <Route path="/addproduct" element={<AddProduct />} />
                         <Route path="/products" element={<ProductList products={this.state.products} />} />
                         <Route path="/title" element={<Title mobile="iphone" />} />
-                        <Route path="/register" element={<RegisterClass />} />
+                        <Route path="/app" element={<App />} />
+                        <Route path="/users" element={<UserLocalStorage />} />
                     </Route>
+                    <Route path="/login" element={<Login />} />
+                    <Route path="/register" element={<RegisterClass />} />
                 </Routes>
             </BrowserRouter>
         </div>
