@@ -2,8 +2,15 @@ import React from "react";
 
 class Welcome extends React.Component {
 
+    constructor(props) {
+        super(props);
+    }
+
     render() {
-        return (<div>Welcome Class Component</div>);
+        return (<div>
+            <div>Welcome Class Component</div>
+            <div>Props Title is {this.props.title}</div>
+        </div>);
     }
 }
 

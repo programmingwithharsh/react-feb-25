@@ -6,17 +6,18 @@ import Welcome from './Welcome';
 import AddProduct from './AddProduct';
 import Title from './Title';
 // import { Title1, Title2, Title3, Title4 } from './Title';
+import Login from './Login';
 
 export default class Main extends React.Component {  // class component
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
         console.log("This is constructor lifecycle - 1");
         this.state = {
             username: "Rishi",
             products: [
                 {
                     "productId": 1,
-                    "productName": "Leaf Rake - Redux",
+                    "productName": "Leaf Rake",
                     "productCode": "GDN-0011",
                     "releaseDate": "March 19, 2016",
                     "description": "Leaf rake with 48-inch wooden handle.",
@@ -66,6 +67,8 @@ export default class Main extends React.Component {  // class component
                 }
             ]
         }
+
+        console.log("Main Component Props is ", this.props);
     }
 
     updateUsername = () => {
@@ -79,48 +82,16 @@ export default class Main extends React.Component {  // class component
         console.log(this.state);
         return <div>
             <div>This is Main Class Component</div>
-            <h1>Username state is {this.state.username}</h1>
+            <h1>Username Props is {this.props.username}</h1>
+            <h1>Username State is {this.state.username}</h1>
             <button onClick={this.updateUsername}>Update Username</button>
-
-            <table border="1">
-                <thead>
-                    <tr>
-                        <th>
-                            Product Name
-                        </th>
-                        <th>
-                            Product Description
-                        </th>
-                        <th>
-                            Price
-                        </th>
-                        <th>
-                            Rating
-                        </th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {
-                        this.state.products.map((product, index) => (
-                            <tr key={index}>
-                                <td>{product.productName}</td>
-                                <td>{product.description}</td>
-                                <td>{product.price}</td>
-                                <td>{product.starRating}</td>
-                            </tr>
-                        )
-                        )
-                    }
-
-                </tbody>
-            </table>
-
-            <ProductList />
+            <ProductList products={this.state.products} />
             <App />
             <Product />
-            <Welcome />
+            <Welcome title="Ajay" />
             <AddProduct />
-            <Title />
+            <Title mobile="iphone" />
+            <Login />
         </div>
     }
 }
