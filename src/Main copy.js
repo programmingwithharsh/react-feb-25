@@ -10,8 +10,6 @@ import Login from './Login';
 import Register from './Register';
 import RegisterClass from './RegisterClass';
 import UserLocalStorage from './UserLocalStorage';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import Nav from './Nav';
 
 export default class Main extends React.Component {  // class component
     constructor(props) {
@@ -86,17 +84,19 @@ export default class Main extends React.Component {  // class component
         console.log("This is render lifecycle - 2");
         console.log(this.state);
         return <div>
-            <BrowserRouter>
-                <Routes>
-                    <Route path="/" element={<Nav />}>
-                        <Route index element={<Welcome />} />
-                        <Route path="/addproduct" element={<AddProduct />} />
-                        <Route path="/products" element={<ProductList products={this.state.products} />} />
-                        <Route path="/title" element={<Title mobile="iphone" />} />
-                        <Route path="/register" element={<RegisterClass />} />
-                    </Route>
-                </Routes>
-            </BrowserRouter>
+            <RegisterClass />
+            <div>This is Main Class Component</div>
+            <h1>Username Props is {this.props.username}</h1>
+            <h1>Username State is {this.state.username}</h1>
+            <button onClick={this.updateUsername}>Update Username</button>
+            <ProductList products={this.state.products} />
+            <App />
+            <Product />
+            <Welcome title="Ajay" />
+            <AddProduct />
+            <Title mobile="iphone" />
+            <Login />
+            <UserLocalStorage />
         </div>
     }
 }
