@@ -8,19 +8,19 @@ class UserLocalStorage extends React.Component {
         localStorage.setItem("username", "Swathi"); // key and value pair
         localStorage.setItem("x", "2");
         localStorage.setItem("active", true);
-        console.log("constructor");
+        console.log("UserLocalStorage component constructor");
     }
 
     componentDidMount() {
-        console.log("componentDidMount");
+        console.log("UserLocalStorage component componentDidMount");
         let value = localStorage.getItem("username"); // taking username from localstorage
-        this.setState({
+        this.setState({ // Whenever state update, component rerender
             name: value
         })
     }
 
     render() {
-        console.log("render");
+        console.log("UserLocalStorage component render");
         return (<>
             <h1>
                 Local Storage Example

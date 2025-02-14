@@ -31,7 +31,7 @@ class RegisterClass extends React.Component {
         users.push(user); // add item inside array
 
         let usersString = JSON.stringify(users); // convert object into string
-        localStorage.setItem("users", usersString) // set item in local storage
+        localStorage.setItem("users", usersString) // set item in local storage, key and value pair
     }
 
     render() {
