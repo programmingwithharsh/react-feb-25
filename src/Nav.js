@@ -10,6 +10,7 @@ function Nav() {
             <Link to="/title">Title</Link>|
             <Link to="/app">App</Link>|
             <Link to="/users">Users</Link>
+            <Link to="/register">Register</Link>
         </nav>
         <div>
             <Outlet />

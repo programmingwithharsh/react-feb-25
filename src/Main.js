@@ -92,9 +92,9 @@ export default class Main extends React.Component {  // class component
                         <Route path="/title" element={<Title mobile="iphone" />} />
                         <Route path="/app" element={<App />} />
                         <Route path="/users" element={<UserLocalStorage />} />
+                        <Route path="/register" element={<RegisterClass />} />
                     </Route>
                     <Route path="/login" element={<Login />} />
-                    <Route path="/register" element={<RegisterClass />} />
                 </Routes>
             </BrowserRouter>
         </div>
