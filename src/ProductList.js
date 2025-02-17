@@ -1,12 +1,20 @@
 export default function ProductList(props) {
     console.log("ProductList Component Props is ", props);
-    return <div>
-        <div>Product List Functional Component</div>
-        <table border="1">
+    return <div className="m-4">
+        <h1>Product List Functional Component</h1>
+        <div className="table-responsive">
+            <table border="1" className="table table-striped table-hover">
                 <thead>
                     <tr>
+                        <th></th>
                         <th>
                             Product Name
+                        </th>
+                        <th>
+                            Product Code
+                        </th>
+                        <th>
+                            Release Date
                         </th>
                         <th>
                             Product Description
@@ -23,7 +31,10 @@ export default function ProductList(props) {
                     {
                         props.products.map((product, index) => (
                             <tr key={index}>
+                                <td><img src={product.imageUrl} width="50" height="50" /></td>
                                 <td>{product.productName}</td>
+                                <td>{product.productCode}</td>
+                                <td>{product.releaseDate}</td>
                                 <td>{product.description}</td>
                                 <td>{product.price}</td>
                                 <td>{product.starRating}</td>
@@ -34,5 +45,6 @@ export default function ProductList(props) {
 
                 </tbody>
             </table>
+        </div>
     </div>
 }
