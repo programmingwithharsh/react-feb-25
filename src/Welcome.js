@@ -1,12 +1,27 @@
 import React from "react";
 import './Welcome.css'; // External CSS
+import { Link } from 'react-router-dom';
+
 class Welcome extends React.Component {
 
-    constructor(props) {
+    constructor(props) { // lifecycle
         super(props);
+        this.state = {
+            username: "Rishi",
+        }
     }
 
-    render() {
+    updateUsername = () => {
+        this.setState({ // Update component state, whenever state update component rerender
+            username: "Ravi"
+        })
+    }
+
+    shouldComponentUpdate() { // by default component update value, we can change as well
+        return true;
+    }
+
+    render() { // lifecycle
         let myStyle = {
             color: 'blue',
             fontSize: ' 40px'
@@ -17,9 +32,15 @@ class Welcome extends React.Component {
                 <div style={myStyle}>Welcome Class Component</div>
                 <div style={myStyle}>Props Title is {this.props.title}</div>
             </div>
+            <h1>Username State is {this.state.username}</h1>
+            <button onClick={this.updateUsername} className="btn btn-outline-primary">Update Username</button>
+
             <div className="anotherDiv demo">This is another div</div>
             <div className="anotherDiv">This is another div 2</div>
             <div id="username">Shamim</div>
+
+            <Link className="btn btn-primary">Sample</Link>
+            <button>Sample</button>
         </div>);
     }
 }

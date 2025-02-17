@@ -1,8 +1,13 @@
 import React from 'react';
+import { Navigate } from 'react-router-dom';
 
 class RegisterClass extends React.Component {
-    constructor(props) {
-        super(props);
+
+    constructor() {
+        super();
+        this.state = { // default value
+            redirect: false
+        }
     }
 
     handleSubmit = (event) => {
@@ -11,12 +16,12 @@ class RegisterClass extends React.Component {
         const email = event.target.elements.email.value;
         const password = event.target.elements.password.value;
 
-        if (fullname == "") {
+        if (fullname === "") {
             alert("Enter Fullname");
-        } else if (email == "") {
+        } else if (email === "") {
             alert("Enter Email");
         }
-        else if (password == "") {
+        else if (password === "") {
             alert("Enter Password");
         }
 
@@ -32,10 +37,21 @@ class RegisterClass extends React.Component {
 
         let usersString = JSON.stringify(users); // convert object into string
         localStorage.setItem("users", usersString) // set item in local storage, key and value pair
+        this.setState({
+            redirect: true
+        })
+
     }
 
     render() {
+        const { redirect } = this.state;
+
         return (<div>
+            {
+                redirect && (
+                    <Navigate to="/products" />
+                )
+            }
             <h1>Register</h1>
             <form action="./RegisterSuccessful.html" method="get" onSubmit={this.handleSubmit}>
                 Fullname <input type="text" placeholder='Enter fullname' id="fullname" name="fullname" /><br />
@@ -49,8 +65,8 @@ class RegisterClass extends React.Component {
                 Launch demo modal
             </button>
 
-            
-            <div className="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+
+            <div className="modal fade" id="exampleModal" tabIndex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                 <div className="modal-dialog">
                     <div className="modal-content">
                         <div className="modal-header">
@@ -58,7 +74,7 @@ class RegisterClass extends React.Component {
                             <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div className="modal-body">
-                            
+
                         </div>
                         <div className="modal-footer">
                             <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Close</button>

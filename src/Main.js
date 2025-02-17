@@ -9,6 +9,7 @@ import RegisterClass from './RegisterClass';
 import UserLocalStorage from './UserLocalStorage';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Nav from './Nav';
+import NotFound from './NotFound';
 
 export default class Main extends React.Component {  // class component
     constructor(props) {
@@ -93,6 +94,7 @@ export default class Main extends React.Component {  // class component
                         <Route path="/app" element={<App />} />
                         <Route path="/users" element={<UserLocalStorage />} />
                         <Route path="/register" element={<RegisterClass />} />
+                        <Route path="*" element={<NotFound />} />
                     </Route>
                     <Route path="/login" element={<Login />} />
                 </Routes>

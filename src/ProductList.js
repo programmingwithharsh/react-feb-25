@@ -1,4 +1,3 @@
-import Product from './Product';
 export default function ProductList(props) {
     console.log("ProductList Component Props is ", props);
     return <div>
