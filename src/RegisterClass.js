@@ -37,10 +37,14 @@ class RegisterClass extends React.Component {
 
         let usersString = JSON.stringify(users); // convert object into string
         localStorage.setItem("users", usersString) // set item in local storage, key and value pair
+
+        this.redirect();
+    }
+
+    redirect = () => {
         this.setState({
             redirect: true
         })
-
     }
 
     render() {
@@ -83,6 +87,8 @@ class RegisterClass extends React.Component {
                     </div>
                 </div>
             </div>
+
+            <button onClick={this.redirect} className='btn btn-primary m-2'>Redirect to Products</button>
 
         </div>);
     }
