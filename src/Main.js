@@ -12,6 +12,7 @@ import Nav from './Nav';
 import NotFound from './NotFound';
 import ProductDetail from './ProductDetail';
 import Bootstrap from './Bootstrap/Bootstrap';
+import HooksExample from './hooks/HooksExample';
 
 export default class Main extends React.Component {  // class component
     constructor(props) {
@@ -98,6 +99,7 @@ export default class Main extends React.Component {  // class component
                         <Route path="/register" element={<RegisterClass />} />
                         <Route path="/productDetail/:productid" element={<ProductDetail />} />
                         <Route path="/bs" element={<Bootstrap />} />
+                        <Route path="/hooks" element={<HooksExample />} />
                         <Route path="*" element={<NotFound />} />
                     </Route>
                     <Route path="/login" element={<Login />} />
