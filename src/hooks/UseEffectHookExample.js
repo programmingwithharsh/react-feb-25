@@ -26,13 +26,7 @@ function UseEffectHookExample() {
 
     return (<>
         <h1>User list using useState and useEffect Hook</h1>
-        <ul>
-            {
-                data.map((item, index) => (
-                    <li key={index}>{item.name}</li>
-                ))
-            }
-        </ul>
+       
     </>);
 }
 

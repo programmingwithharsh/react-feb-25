@@ -39,6 +39,9 @@ function Nav() {
                             <Link className="nav-link" to="/bs">Core Bootstrap</Link>
                         </li>
                         <li className="nav-item">
+                            <Link className="nav-link" to="/reactbs">React Bootstrap</Link>
+                        </li>
+                        <li className="nav-item">
                             <Link className="nav-link" to="/hooks">Hooks</Link>
                         </li>
                     </ul>

@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import Product from './Product';
 
 export default function ProductList(props) {
     console.log("ProductList Component Props is ", props);
@@ -32,15 +32,7 @@ export default function ProductList(props) {
                 <tbody>
                     {
                         props.products.map((product, index) => (
-                            <tr key={index}>
-                                <td><img src={product.imageUrl} width="50" height="50" /></td>
-                                <td><Link to={`/productDetail/${product.productId}`}>{product.productName}</Link></td>
-                                <td>{product.productCode}</td>
-                                <td>{product.releaseDate}</td>
-                                <td>{product.description}</td>
-                                <td>{product.price}</td>
-                                <td>{product.starRating}</td>
-                            </tr>
+                            <Product key={index} product={product} />
                         )
                         )
                     }

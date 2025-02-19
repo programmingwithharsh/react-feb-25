@@ -2,7 +2,8 @@ import React from "react";
 import './Welcome.css'; // External CSS
 import { Link } from 'react-router-dom';
 
-class Welcome extends React.Component {
+class Welcome extends React.PureComponent {
+// class Welcome extends React.Component {
 
     constructor(props) { // lifecycle
         super(props);
@@ -17,11 +18,14 @@ class Welcome extends React.Component {
         })
     }
 
+    /*
     shouldComponentUpdate() { // by default component update value, we can change as well
         return true;
     }
+    */
 
     render() { // lifecycle
+        console.log(this.state);
         let myStyle = {
             color: 'blue',
             fontSize: ' 40px'

@@ -13,8 +13,10 @@ import NotFound from './NotFound';
 import ProductDetail from './ProductDetail';
 import Bootstrap from './Bootstrap/Bootstrap';
 import HooksExample from './hooks/HooksExample';
+import ReactBootstrap from './ReactBootstrap/ReactBootstrap';
 
-export default class Main extends React.Component {  // class component
+export default class 
+Main extends React.Component {  // class component
     constructor(props) {
         super(props);
         console.log("This is constructor lifecycle - 1");
@@ -99,6 +101,7 @@ export default class Main extends React.Component {  // class component
                         <Route path="/register" element={<RegisterClass />} />
                         <Route path="/productDetail/:productid" element={<ProductDetail />} />
                         <Route path="/bs" element={<Bootstrap />} />
+                        <Route path="/reactbs" element={<ReactBootstrap />} />
                         <Route path="/hooks" element={<HooksExample />} />
                         <Route path="*" element={<NotFound />} />
                     </Route>
