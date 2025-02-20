@@ -14,9 +14,10 @@ import ProductDetail from './ProductDetail';
 import Bootstrap from './Bootstrap/Bootstrap';
 import HooksExample from './hooks/HooksExample';
 import ReactBootstrap from './ReactBootstrap/ReactBootstrap';
+import { removeProduct, loadProducts, addProduct } from "./redux/actions";
 
-export default class 
-Main extends React.Component {  // class component
+export default class
+    Main extends React.Component {  // class component
     constructor(props) {
         super(props);
         console.log("This is constructor lifecycle - 1");
@@ -85,6 +86,22 @@ Main extends React.Component {  // class component
         })
     }
 
+    componentDidMount() {
+       // this.props.dispatch(removeProduct(1)); // calling action
+        console.log(this.props.products);
+        this.props.dispatch(addProduct({
+            "productId": 6,
+            "productName": "iPhone",
+            "productCode": "GDN-323",
+            "releaseDate": "March 19, 2025",
+            "description": "iphone good phone",
+            "price": 19.95,
+            "starRating": 5,
+            "imageUrl": "https://openclipart.org/image/300px/svg_to_png/26215/Anonymous_Leaf_Rake.png"
+        }));
+       // this.props.dispatch(loadProducts())
+    }
+
     render() { // lifecycle
         console.log("This is render lifecycle - 2");
         console.log(this.state);
@@ -94,7 +111,7 @@ Main extends React.Component {  // class component
                     <Route path="/" element={<Nav />}>
                         <Route index element={<Welcome />} />
                         <Route path="/addproduct" element={<AddProduct />} />
-                        <Route path="/products" element={<ProductList products={this.state.products} />} />
+                        <Route path="/products" element={<ProductList products={this.props.products} />} />
                         <Route path="/title" element={<Title mobile="iphone" />} />
                         <Route path="/app" element={<App />} />
                         <Route path="/users" element={<UserLocalStorage />} />
