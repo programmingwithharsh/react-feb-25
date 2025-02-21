@@ -1,11 +1,11 @@
 import products from "../data/products";
 
 const ProductReducer = function (state = products, action) {
-    debugger
     switch (action.type) {
         case "REMOVE_PRODUCT":
-            return [...state]; // write a logic to remove product
-
+            // return [...state]; // write a logic to remove product
+            return state.filter(product => product.productId !== action.index)
+            
         case "ADD_PRODUCT":
             return [...state, action.product]; // appending
 

@@ -1,6 +1,5 @@
 import React from 'react';
 import ProductList from './ProductList';
-import App from './App';
 import Welcome from './Welcome';
 import AddProduct from './AddProduct';
 import Title from './Title';
@@ -87,7 +86,7 @@ export default class
     }
 
     componentDidMount() {
-       // this.props.dispatch(removeProduct(1)); // calling action
+        this.props.dispatch(removeProduct(1)); // calling action
         console.log(this.props.products);
         this.props.dispatch(addProduct({
             "productId": 6,
@@ -102,6 +101,12 @@ export default class
        // this.props.dispatch(loadProducts())
     }
 
+    addProduct = (productSubmitted) => { // udpating state
+        this.setState((state) => ({
+            products: state.products.concat([productSubmitted])
+        }))
+    }
+
     render() { // lifecycle
         console.log("This is render lifecycle - 2");
         console.log(this.state);
@@ -110,10 +115,9 @@ export default class
                 <Routes>
                     <Route path="/" element={<Nav />}>
                         <Route index element={<Welcome />} />
-                        <Route path="/addproduct" element={<AddProduct />} />
-                        <Route path="/products" element={<ProductList products={this.props.products} />} />
+                        <Route path="/addproduct" element={<AddProduct  onAddProduct={(addedProduct) => this.addProduct(addedProduct)} address="Mumbai" />} />
+                        <Route path="/products" element={<ProductList products={this.state.products} />} />
                         <Route path="/title" element={<Title mobile="iphone" />} />
-                        <Route path="/app" element={<App />} />
                         <Route path="/users" element={<UserLocalStorage />} />
                         <Route path="/register" element={<RegisterClass />} />
                         <Route path="/productDetail/:productid" element={<ProductDetail />} />

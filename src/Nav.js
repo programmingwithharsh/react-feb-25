@@ -24,9 +24,6 @@ function Nav() {
                             <Link className="nav-link" to="/title">Title</Link>
                         </li>
                         <li className="nav-item">
-                            <Link className="nav-link" to="/app">App</Link>
-                        </li>
-                        <li className="nav-item">
                             <Link className="nav-link" to="/users">Users</Link>
                         </li>
                         <li className="nav-item">

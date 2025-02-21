@@ -3,13 +3,14 @@ import './Welcome.css'; // External CSS
 import { Link } from 'react-router-dom';
 
 class Welcome extends React.PureComponent {
-// class Welcome extends React.Component {
+    // class Welcome extends React.Component {
 
     constructor(props) { // lifecycle
         super(props);
         this.state = {
             username: "Rishi",
         }
+        console.log("welcome constructor");
     }
 
     updateUsername = () => {
@@ -23,6 +24,10 @@ class Welcome extends React.PureComponent {
         return true;
     }
     */
+
+    componentWillUnmount() {
+        console.log("welcome componentWillUnmount");
+    }
 
     render() { // lifecycle
         console.log(this.state);

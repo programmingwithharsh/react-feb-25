@@ -3,7 +3,7 @@ import UseReducerHookExample from './UseReducerHookExample';
 import WithoutContext from './WithoutContext';
 import WithContext from './WithContext';
 import UseCustomHook from './UseCustomHook';
-
+import UseRefExample from './UseRefExample';
 
 function HooksExample() {
     const [posts] = UseCustomHook("https://jsonplaceholder.typicode.com/posts");
@@ -11,6 +11,8 @@ function HooksExample() {
     const [users] = UseCustomHook("http://localhost:4000/users");
 
     return (<div className="m-4">
+        <h1>Use Ref Hook Example</h1>
+        <UseRefExample />
         <h1>Custom Hook Example</h1>
 
         <h2>List of Users from our own API</h2>

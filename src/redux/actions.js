@@ -6,7 +6,6 @@ export function removeProduct(index) {
 }
 
 export function addProduct(product) {
-    debugger
     return {
         type: "ADD_PRODUCT",
         product: product
